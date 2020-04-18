@@ -1,12 +1,15 @@
 # Site
-name: 'Mundana'
-description: 'Mundana is a free Jekyll theme for awesome people like you, Medium like.'
-logo: 'assets/images/logo.png'
+name: 'CBSI - IFS Lagarto'
+coordenadoria: "Coordenadoria de Sistemas de Informação"
+campus: "Lagarto"
+description: 'Site, não oficial, da coordenadoria de Sistemas de Informação do Campus Lagarto.'
+logo: 'assets/images/CBSI-logo.jpg'
 favicon: 'assets/images/favicon.ico'
 baseurl: '/mundana-theme-jekyll'
-disqus: 'demowebsite'
-email: 'wowthemesnet@gmail.com'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+# TODO
+#disqus: 'demowebsite'
+#email: 'wowthemesnet@gmail.com'
+#mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
 include: ["_pages"]
 permalink: /:title/
@@ -17,6 +20,17 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-timeago
+
+jekyll_timeago:
+  depth: 2
+  translations_path: '/assets/libs/jekyll_timeago/*.yaml'
+  default_locale: 'pt'
+  fallbacks: true
+  available_locales:
+    - 'en'
+    - 'es'
+    - 'fr'
   
 authors:
     sal:
@@ -35,16 +49,27 @@ authors:
       email:          fakemail@gmail.com
       twitter:        https://twitter.com/wowthemesnet
  
+collections:
+  equipe:
+    output: true
+    permalink: /equipe/:path/
+    sort_by: name
+    
+
 # Defaults
 defaults:
-
+  - scope:
+      path: ""
+      type: "equipe"
+    values:
+      layout: "pessoal"
   # all posts
   - scope:
       path: "_posts"
     values:
       layout: post
       author: sal
-      avatar: /assets/images/avatar1.jpg
+      avatar: &logo
       
   # all pages
   - scope:
@@ -59,6 +84,10 @@ highlighter: rouge
 # Paginate
 paginate: 10
 
+
+sass:
+  sass_dir: _sass
+  style: :compressed
 
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
