@@ -6,7 +6,7 @@ titulacao:
 short_name: "Cris"
 type: 
   - Professor
-site: "http://www.ifs.edu.br"
+#site: "http://www.ifs.edu.br"
 # github: 
 # social:
 #  facebook: face_exemplo

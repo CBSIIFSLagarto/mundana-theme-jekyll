@@ -7,8 +7,8 @@ short_name: "Catuxe"
 type: 
   - Professor
   - Coordenador
-site: "http://www.ifs.edu.br"
-github: catuxe
+# site: "http://www.ifs.edu.br"
+github: catuxe 
 #social:
 #  facebook: face_exemplo
 #  twitter: t_exemplo

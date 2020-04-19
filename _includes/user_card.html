@@ -1,3 +1,10 @@
+
+{% capture urlUsuario %}{{site.baseurl}}{{user.url}}{% endcapture %} 
+{% if user.site %}
+	{% assign urlUsuario = user.site %}
+{% endif %}
+
+
 <div class="card-container manual-flip">
 	<div class="card">
 		<div class="front">
@@ -32,12 +39,18 @@
 					{% endif %}
 				</div>
 				<div class="footer">
-					| <a onclick="rotateCard(this)">
+					| {% if site %}
+					<a href="{{ urlUsuario }}" class="google"><i class="fa fa-external-link fa-fw"></i>Mais informações</a>
+					{% else %}
+					 <a onclick="rotateCard(this)">
 						<i class="fa fa-mail-forward"></i> Mais informações
-					</a> |
+					</a> 
+					{% endif %} |
 				</div>
 			</div>
 		</div> <!-- end front panel -->
+		{% unless site %}
+			
 		<div class="back">
 			<div class="header">
 				<h5 class="motto">{{ user.name }}</h5>
@@ -46,18 +59,15 @@
 				<div class="main">
 					{%- if user.bio -%}
 					<p class="text-center">{{ user.bio | | truncate: 400, '...' }}</p>
+					
 					{%- else -%}
 					<p class="text-center">Até o momento nenhuma informação foi adicionada sobre {{ user.name }}</p>
 					{%- endif -%}
-					
 				</div>
 			</div>
 			<div class="footer">
 				<div class="text-center">
-					| <a onclick="rotateCard(this);" ><i class="fa fa-reply"></i> Voltar </a> |
-					{% if user.site %}
-					<a target="_blank" href="{{ user.site }}" class="google"><i class="fa fa-external-link fa-fw"></i></a> |
-					{% endif %}
+					| <a onclick="rotateCard(this);" ><i class="fa fa-reply"></i> Voltar </a> |	
 					{% if user.social.facebook %}
 					<a target="_blank" href="http://fb.com/{{ user.social.facebook }}" class="facebook"><i class="fa fa-facebook fa-fw"></i></a> |
 					{% endif %}
@@ -76,5 +86,7 @@
 				
 			</div>
 		</div> <!-- end back panel -->
+		{% endunless %}
+
 	</div> <!-- end card -->
 </div> <!-- end card-container -->

@@ -1,6 +1,5 @@
 ---
-name: "Francisco Rodrigues"
-
+name: "Francisco"
 # avatar: /path_to_image.png
 # avatar_id: 
 titulacao: 
@@ -10,14 +9,17 @@ short_name: "Francisco"
 type: 
   - Professor
 site: "http://projetokube.github.io/"
-github: &g frchico
+github: frchico
 social:
-  facebook: *g
-  twitter: *g
-  instagram: *g
+  facebook: frchico
+  twitter: frchico
+  instagram: frchico
 bio : "Mestre em Sistemas e Computação pela Universidade Salvador (UNIFACS) e graduado em Sistemas de Informação, pela Universidade Tiradentes (UNIT), faz parte do quadro docente do IFS - Campus Lagarto desde 2012. Dada a sua formação e vivência profissional, busca atuar em temáticas que envolvem engenharia de software, computação em nuvem e Devops, associadas com o ensino de computação. Atualmente leciona disciplinas da área de programação: Estrutura de Dados e Programação Web 2, além de ser membro do colegiado do curso e líder do grupo Projeto Kube."
 ---
 
+	
+Site: {{site}} 
+Tamanho equipe : {{site.equipe.size}}
 Bucharest’s history alternated periods of development and decline from the early settlements in antiquity until its consolidation as the national capital of Romania late in the 19th century. First mentioned as the “Citadel of București” in 1459, it became the residence of the famous Wallachian prince Vlad III the Impaler.
 
 #### Early 18th century woodcut of Bucharest

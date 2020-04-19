@@ -5,7 +5,7 @@ campus: "Lagarto"
 description: 'Site, não oficial, da coordenadoria de Sistemas de Informação do Campus Lagarto.'
 logo: 'assets/images/CBSI-logo.jpg'
 favicon: 'assets/images/favicon.ico'
-baseurl: '/mundana-theme-jekyll'
+baseurl: "/mundana-theme-jekyll"
 # TODO
 #disqus: 'demowebsite'
 #email: 'wowthemesnet@gmail.com'
@@ -31,30 +31,13 @@ jekyll_timeago:
     - 'en'
     - 'es'
     - 'fr'
-  
-authors:
-    sal:
-      name:           Sal
-      site:           https://www.wowthemes.net
-      avatar:         /assets/images/avatar1.jpg
-      bio:            "Hi, I am Sal, the author of Mundana, the theme you're currently previewing. I hope you like it!"
-      email:          wowthemesnet@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
-
-    jane:
-      name:           Jane
-      site:           https://www.wowthemes.net
-      avatar:         /assets/images/avatar2.jpg
-      bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
-      email:          fakemail@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
  
 collections:
   equipe:
     output: true
     permalink: /equipe/:path/
     sort_by: name
-    
+
 
 # Defaults
 defaults:
@@ -69,7 +52,7 @@ defaults:
     values:
       layout: post
       author: sal
-      avatar: &logo
+      avatar: logo
       
   # all pages
   - scope:

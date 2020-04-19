@@ -6,28 +6,19 @@ permalink: /equipe/
 tags: [equipe, professor]
 permalink: "/equipe.html"
 ---
+{% assign coordenadores = site.equipe  | where_exp:"p", "p.type contains 'Coordenador'"  %}
 
-
-{% assign coordenadores = site.equipe  | where: 'type', 'Coordenador' | compact  %}
-
-
-{% include linha_user_cards.html dados=coordenadores titulo="Coordenação" %}
-
-
-{% assign professores = site.equipe 
-	| where_exp:"p", "p.type contains 'Professor'" | compact | order: name  %}
-
+{% assign professores = site.equipe | where_exp:"p", "p.type contains 'Professor'" | compact  %}
 
 {% assign profNCoord = "" | split:"/" %}
 {% for p in professores %}
 	{% unless p.type contains 'Coordenador'  %}
 		{% assign profNCoord = profNCoord | push: p %}
-	{% else %}
-		{% assign professores = professores | pop %}
 	{% endunless %}
-
 {% endfor %}
 
+{% capture texto %}Coordenação ({{coordenadores.size}}){% endcapture %}
+{% include linha_user_cards.html dados=coordenadores titulo=texto %}
 
-
-{% include linha_user_cards.html dados=profNCoord titulo="Professores" %}
+{% capture texto %}Professores ({{profNCoord.size}}){% endcapture %}
+{% include linha_user_cards.html dados=profNCoord titulo=texto %}

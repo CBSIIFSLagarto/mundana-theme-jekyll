@@ -7,7 +7,7 @@ titulacao:
 short_name: "Elisa"
 type: 
   - Professor
-site: "http://www.ifs.edu.br"
+#site: "http://www.ifs.edu.br"
 # github: 
 # social:
 #  facebook: face_exemplo
