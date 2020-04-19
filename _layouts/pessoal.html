@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+{% assign imgsrc = '' %}
+{% if page.avatar %}
+	{% capture imgsrc %}{{ page.avatar | absolute_url }}{% endcapture %}
+{% elsif page.github %}
+	{% capture imgsrc %} https://avatars3.githubusercontent.com/{{ page.github }}?v=3&amp;s=273 {% endcapture %}
+{% else %}
+	{% capture imgsrc %} https://ui-avatars.com/api/?name={{ page.avatar_id | uri_escape  }}?size=273 {% endcapture %}
+{% endif %}
+
+<div class="container">
+    <div class="main-loop">
+        <h4 class="font-weight-bold spanborder"><span>{{page.name}}</span></h4>
+
+		<div class="mb-5 d-flex justify-content-between main-loop-card">
+			<div class="pr-3">
+				<h2 class="mb-1 h4 font-weight-bold">Bio</h2>
+				<p class="excerpt">
+					{{ page.bio }}
+				</p>
+				{% include social.html %}
+			</div>
+
+			{% if imgsrc %}
+				<div class="col-md-3 pr-0 ">
+					<img class="w-100 img-circle" src="{{imgsrc}}" alt="{{ post.name }}">
+				</div>
+			{% endif %}	
+		</div>
+		<h4 class="font-weight-bold spanborder"><span>Formação</span></h4>
+        <ul>
+			{% assign formacao = page.titulacao | compact  | sort %}
+			{% for f in formacao %}
+				<li> {{f}} </li>
+			{% endfor %}
+		</ul><br>
+	</div>
+	{%capture conteudo %}{{content | strip}}{% endcapture %}
+	{% if conteudo.size > 1  %}
+	<h2 class="font-weight-bold spanborder"><span>Mais informações</span></h2>
+		{{ content}}
+	{% endif %}
+</div>

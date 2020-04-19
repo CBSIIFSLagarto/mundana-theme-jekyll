@@ -1,0 +1,92 @@
+
+{% capture urlUsuario %}{{site.baseurl}}{{user.url}}{% endcapture %} 
+{% if user.site %}
+	{% assign urlUsuario = user.site %}
+{% endif %}
+
+
+<div class="card-container manual-flip">
+	<div class="card">
+		<div class="front">
+			<div class="cover">
+				<img src="{{ '/assets/img/pexels/computer.jpeg' | absolute_url }}"/>
+			</div>
+			<div class="user">
+				{% if user.avatar %}
+				<img class="img-circle" src="{{ user.avatar | absolute_url }}"/>
+				{% elsif user.github %}
+				<img class="img-circle" src="https://avatars3.githubusercontent.com/{{ user.github }}?v=3&amp;s=273"/>
+				{% else %}
+				<img class="img-circle" src="https://ui-avatars.com/api/?name={{ user.avatar_id | uri_escape  }}?size=273"/>
+				{% endif %}
+			</div>
+			<div class="content">
+				<div class="main">
+					<h3 class="name">{{ user.short_name }}</h3>	
+					{% capture cargo %}
+						{% for tag in user.type %}
+							{% if forloop.first %} {{tag}}
+							{% elsif forloop.last %} e {{tag}}
+							{% else %} , {{tag}} 
+							{% endif %}
+						{% endfor %}
+					{% endcapture %} 
+					<p class="profession">{{ cargo }}</p>
+					{% if user.bio %}
+					<p class="text-center">{{ user.bio | truncate: 20 }}</p>
+					{% else %}
+					<p class="text-center">"Nenhuma informação foi adicionada!"</p>
+					{% endif %}
+				</div>
+				<div class="footer">
+					| {% if site %}
+					<a href="{{ urlUsuario }}" class="google"><i class="fa fa-external-link fa-fw"></i>Mais informações</a>
+					{% else %}
+					 <a onclick="rotateCard(this)">
+						<i class="fa fa-mail-forward"></i> Mais informações
+					</a> 
+					{% endif %} |
+				</div>
+			</div>
+		</div> <!-- end front panel -->
+		{% unless site %}
+			
+		<div class="back">
+			<div class="header">
+				<h5 class="motto">{{ user.name }}</h5>
+			</div>
+			<div class="content">
+				<div class="main">
+					{%- if user.bio -%}
+					<p class="text-center">{{ user.bio | | truncate: 400, '...' }}</p>
+					
+					{%- else -%}
+					<p class="text-center">Até o momento nenhuma informação foi adicionada sobre {{ user.name }}</p>
+					{%- endif -%}
+				</div>
+			</div>
+			<div class="footer">
+				<div class="text-center">
+					| <a onclick="rotateCard(this);" ><i class="fa fa-reply"></i> Voltar </a> |	
+					{% if user.social.facebook %}
+					<a target="_blank" href="http://fb.com/{{ user.social.facebook }}" class="facebook"><i class="fa fa-facebook fa-fw"></i></a> |
+					{% endif %}
+					{% if user.github %}
+					<a target="_blank" href="http://github.com/{{ user.github }}" class="google"><i class="fa fa-github fa-fw"></i></a> |
+					{% endif %}
+					{% if user.social.twitter %}
+					<a target="_blank" href="https://twitter.com/{{ user.social.twitter }}" class="twitter"><i class="fa fa-twitter fa-fw"></i></a> |
+					{% endif %}
+					{% if user.social.instagram %}
+					<a target="_blank" href="https://instagram.com/{{ user.social.instagram }}" class="instagram"><i class="fa fa-instagram fa-fw"></i></a> |
+					{% endif %}
+				</div>
+				
+					
+				
+			</div>
+		</div> <!-- end back panel -->
+		{% endunless %}
+
+	</div> <!-- end card -->
+</div> <!-- end card-container -->
