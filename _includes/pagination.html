@@ -1,0 +1,38 @@
+{% if paginator.total_pages > 1 %}
+<nav aria-label="Page navigation example">
+<ul class="pagination justify-content-center flex-wrap">
+
+  {% if paginator.previous_page %}
+    {% if site.paginate_show_first_and_last %}
+      <li class="page-item"><a class="page-link" href="{{ site.baseurl | replace: '//', '/' }}/" title="First page">&laquo;</a></li>
+    {% endif %}
+    <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" title="Previous page">&lt;</a></li>
+  {% endif %}
+
+  {% assign page_start = paginator.page | minus: site.paginate_trail %}
+  {% assign page_end = paginator.page | plus: site.paginate_trail %}
+
+  {% for page in (page_start..page_end) %}
+    {% if page < 1 %}
+      <!-- Do nothing -->
+    {% elsif page > paginator.total_pages %}
+      <!-- Do nothing -->
+    {% elsif page == paginator.page %}
+      <li class="page-item active"><a class="page-link">{{ page }} <span class="sr-only">(current)</span></a></li>
+    {% elsif page == 1 %}
+      <li class="page-item"><a class="page-link" href="{{ site.baseurl | replace: '//', '/' }}/">{{ page }}</a></li>
+    {% else %}
+      <li class="page-item"><a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" title="Next page">&gt;</a></li>
+    {% if site.paginate_show_first_and_last %}
+      <li class="page-item"><a class="page-link" href="{{ site.baseurl | replace: '//', '/' }}/page{{ paginator.total_pages }}" title="Last page">&raquo;</a></li>
+    {% endif %}
+  {% endif %}
+
+</ul>
+</nav>
+{% endif %}
