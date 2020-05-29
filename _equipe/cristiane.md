@@ -1,4 +1,5 @@
 ---
+author_id: cris
 name: "Cristiane"
 titulacao: 
   - Graduada em Ciência da Computação

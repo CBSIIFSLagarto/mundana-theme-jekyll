@@ -4,7 +4,7 @@ date: 2020-04-18
 title: Quem Somos
 permalink: /equipe/
 tags: [equipe, professor]
-permalink: "/equipe.html"
+permalink: "/equipe.html" 
 ---
 {% assign coordenadores = site.equipe  | where_exp:"p", "p.type contains 'Coordenador'"  %}
 

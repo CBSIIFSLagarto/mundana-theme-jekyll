@@ -1,4 +1,5 @@
 ---
+author_id: glauco
 name: "Glauco Luiz Rezende de Carvalho"
 titulacao: 
   - Graduado em Sistemas de Informação

@@ -1,0 +1,20 @@
+{% if include.userid %}
+	{% assign user = site.equipe | where: "author_id", include.userid | first %}	
+	{% capture urlUsuario %}{{site.baseurl}}{{user.url}}{% endcapture %} 
+<div class="row mt-5">
+	<div class="col-md-2 align-self-center">
+		{% if user.avatar %}
+			<img class="rounded-circle" src="{{ user.avatar | absolute_url }}"
+		{% elsif user.github %}
+			<img class="rounded-circle" src="https://avatars3.githubusercontent.com/{{ user.github }}?v=3&amp;s=273"
+		{% else %}
+			<img class="rounded-circle" src="https://ui-avatars.com/api/?name={{ user.avatar_id | uri_escape  }}?size=273"
+		{% endif %}
+		alt="{{user.name}}" width="90"/>
+	</div>
+	<div class="col-md-10">		
+		<h5 class="font-weight-bold">Escrito por {{user.short_name }}<span><a href="{{ urlUsuario }}" class="btn btn-outline-success btn-sm btn-round ml-2">Bio</a></span></h5>
+		{{ user.bio }}	
+	</div>
+</div>
+{% endif %}

@@ -1,4 +1,5 @@
 ---
+author_id: chico
 name: "Francisco"
 # avatar: /path_to_image.png
 # avatar_id: 
@@ -13,7 +14,7 @@ github: frchico
 social:
   facebook: frchico
   twitter: frchico
-  instagram: frchico
+  instagram: frchico 
 bio : "Mestre em Sistemas e Computação pela Universidade Salvador (UNIFACS) e graduado em Sistemas de Informação, pela Universidade Tiradentes (UNIT), faz parte do quadro docente do IFS - Campus Lagarto desde 2012. Dada a sua formação e vivência profissional, busca atuar em temáticas que envolvem engenharia de software, computação em nuvem e Devops, associadas com o ensino de computação. Atualmente leciona disciplinas da área de programação: Estrutura de Dados e Programação Web 2, além de ser membro do colegiado do curso e líder do grupo Projeto Kube."
 ---
 

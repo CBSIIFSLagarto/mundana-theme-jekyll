@@ -11,6 +11,12 @@ baseurl: "/mundana-theme-jekyll"
 #email: 'wowthemesnet@gmail.com'
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
+# Exemplo de temas http://preview.themeforest.net/item/devoll-multipurpose-theme-powered-by-jekyll/full_screen_preview/11132266?_ga=2.52203681.921556940.1566450303-1009772003.1566028252&irgwc=1&clickid=Rc50MFUzjxyOUPowUx0Mo3IyUkix650fZR%3Ay0c0&iradid=275988&irpid=420717&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_420717&utm_medium=affiliate&utm_source=impact_radius
+
+
+
+
+
 include: ["_pages"]
 permalink: /:title/
 
@@ -21,6 +27,11 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-timeago
+  # Olhar https://github.com/psmiraglia/jekyll-email-obfuscator
+  # Plugin para filtrar em coleções https://gist.github.com/delputnam/5496ada2a6e009e8e578
+
+
+  # Documentação legal https://bl.ocks.org/roachhd/2909c695979764498922
 
 jekyll_timeago:
   depth: 2
@@ -51,8 +62,9 @@ defaults:
       path: "_posts"
     values:
       layout: post
-      author: sal
-      avatar: logo
+      categories: [ Geral ]
+      #author: sal
+      #avatar: logo
       
   # all pages
   - scope:

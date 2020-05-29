@@ -1,4 +1,5 @@
 ---
+author_id: lauro
 name: "Lauro"
 titulacao: 
   - Graduado em Ciência da Computação

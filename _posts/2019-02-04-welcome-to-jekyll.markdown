@@ -1,25 +1,28 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-categories: [ Jekyll ]
+title: "Sobre o site"
 image: assets/images/demo1.jpg
+except: Para o site oficial, clique [aqui][siteCBSI].
+tags: [sticky]
+author: chico
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+ 
+Antes de tudo, é importante destacar que este site ({{ site.name }}) ***NÃO*** é um site oficial.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Foi criado para reunir informações já divulgadas ou associadas ao curso de Sistemas de Informação do IFS. Para o site oficial, [clique aqui][siteCBSI].
 
-Jekyll also offers powerful support for code snippets:
+Agora sim, vamos lá....
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+---
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+## Sobre a CBSI
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+A Coordenadoria de Sistemas de Informação (CBSI) foi criada em 2011.2 com a implantação do [Curso Superior de Bacharelado em Sistemas de Informação, no Campus Lagarto][siteCBSI], com o objetivo de gerenciar um curso para preencher as lacunas de mão-de-obra advindas da disseminação de novas tecnologias no mercado de trabalho e no processo de desenvolvimento regional.
+
+Desta maneira, busca formar bacharéis em sistemas de informação capazes de articular e mobilizar conhecimento, habilidades, atitudes e valores, compreendendo o processo de construção e reconstrução do conhecimento, empregando tecnologias atuais visando suprir às necessidades do mercado de trabalho.
+
+A [equipe] a CBSI é multidisciplinar e trabalha com o tripé Ensino-Pesquisa-Extensão, isto é, além do ensino, realiza pesquisas e trabalhos de extensão que envolvem a comunidade da região do centro-sul do estado de Sergipe.
+
+
+[equipe]: {{site.baseurl}}/equipe
+[siteCBSI]: htttp://www.ifs.edu.br
